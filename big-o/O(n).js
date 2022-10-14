@@ -7,7 +7,7 @@ function findNemo(arr) {
     if (arr[i] === "nemo") {
       console.log("FOUND NEMO!!");
     }
-  } // O(n)
+  } // O(n) is linear => each element makes the operation grove only 1 time more
   let t1 = performance.now();
   console.log("The call findNemo took " + (t1 - t0) + "ms");
 }
