@@ -35,6 +35,3 @@ console.log(
     [5, 6, 5, [4, 3, 2]],
   ])
 );
-function mergeSortedArrays(arr) {
-  return arr.flat(Infinity).sort(); //O(1)
-}
