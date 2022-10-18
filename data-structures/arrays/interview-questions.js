@@ -24,3 +24,17 @@ console.log(reverse2(inputStr));
 //Even cleaner
 const reverse3 = (str) => [...str].reverse().join("");
 console.log(reverse3(inputStr));
+
+// Merge sorted Arrays
+function mergeSortedArrays(arr) {
+  return arr.flat(Infinity).sort(); //O(1)
+}
+console.log(
+  mergeSortedArrays([
+    [1, 2, 3, 4],
+    [5, 6, 5, [4, 3, 2]],
+  ])
+);
+function mergeSortedArrays(arr) {
+  return arr.flat(Infinity).sort(); //O(1)
+}
