@@ -26,7 +26,7 @@ const reverse3 = (str) => [...str].reverse().join("");
 console.log(reverse3(inputStr));
 
 // Merge sorted Arrays
-function mergeSortedArrays(arr1, arr2) {
+function mergeSortedArrays(arr1 = [], arr2 = []) {
   return [...arr1, ...arr2].sort(); //O(1)
 }
 console.log(mergeSortedArrays([1, 2, 3, 4, 5], [6, 5, 4, 3, 2, 1]));
