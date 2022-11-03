@@ -32,6 +32,26 @@ class HashTable {
     }
     return undefined;
   } //O1 but if there are collisions(more than 1 item) is On
+
+  keys() {
+    const keysArr = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keysArr.push(this.data[i][0][0]);
+      }
+    }
+    return keysArr;
+  } //On
+
+  values() {
+    const valsArr = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        valsArr.push(this.data[i][0][1]);
+      }
+    }
+    return valsArr;
+  } //On
 }
 
 const myHashTable = new HashTable(50);
@@ -39,3 +59,6 @@ myHashTable.set("grapes", 10000);
 console.log(myHashTable.get("grapes"));
 myHashTable.set("apples", 9);
 console.log(myHashTable.get("apples"));
+myHashTable.set("oranges", 49);
+console.log(myHashTable.keys());
+console.log(myHashTable.values());
