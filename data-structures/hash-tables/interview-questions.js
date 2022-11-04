@@ -14,7 +14,7 @@ function firstRecChar(arr) {
     }
   }
   return;
-}
+} //On
 
 console.log(firstRecChar(arr1)); //2
 console.log(firstRecChar(arr2)); //1
