@@ -10,7 +10,6 @@ function firstRecChar(arr) {
     if (hash[arr[i]]) {
       return arr[i];
     } else {
-      //   hash.arr[i] = 1;
       hash[arr[i]] = 1;
     }
   }
