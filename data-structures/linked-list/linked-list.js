@@ -11,3 +11,95 @@ const basket = ["apples", "oranges", "grapes"];
 //Example:
 const obj1 = { a: true };
 const obj2 = obj1;
+
+// build a linked list
+
+// let myLinkedList = {
+//   head: {
+//     value: 10,
+//     next: {
+//       value: 5,
+//       next: {
+//         value: 16,
+//         next: null,
+//       },
+//     },
+//   },
+// };
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null,
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+  append(value) {
+    const newNode = new Node(value);
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  } //O1
+
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  } //O1
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+
+    while (currentNode != null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return array;
+  } //On
+
+  insert(index, value) {
+    if (index === 0) {
+      this.prepend(value);
+      return this.printList();
+    }
+    if (index >= this.length) {
+      this.append(value);
+    }
+    const newNode = new Node(value);
+    const leader = this._traverseToIndex(index - 1);
+    const holdintPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdintPointer;
+    this.length++;
+    return this;
+  }
+
+  remove(index) {}
+  _traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+}
+
+const myLintedList = new LinkedList(10);
+myLintedList.append(16);
+myLintedList.append(24);
+myLintedList.prepend(1);
+myLintedList.insert(2, 99);
+console.log(myLintedList.printList());
