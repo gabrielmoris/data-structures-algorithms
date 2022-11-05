@@ -85,7 +85,25 @@ class LinkedList {
     return this;
   }
 
-  remove(index) {}
+  remove(index) {
+    if (index === 0) {
+      this.head = this.head.next;
+      this.length--;
+      return this;
+    }
+    if (index > this.length) {
+      const leader = this._traverseToIndex(this.length - 2);
+      leader.next = null;
+      this.length--;
+      return this;
+    }
+    const leader = this._traverseToIndex(index - 1);
+    const holdintPointer = leader.next.next;
+    leader.next = holdintPointer;
+    this.length--;
+    return this;
+  } //On
+
   _traverseToIndex(index) {
     let counter = 0;
     let currentNode = this.head;
@@ -100,6 +118,9 @@ class LinkedList {
 const myLintedList = new LinkedList(10);
 myLintedList.append(16);
 myLintedList.append(24);
+myLintedList.append("delete me");
 myLintedList.prepend(1);
 myLintedList.insert(2, 99);
+myLintedList.remove(0);
+myLintedList.remove(34);
 console.log(myLintedList.printList());
