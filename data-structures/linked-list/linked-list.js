@@ -123,4 +123,5 @@ myLintedList.prepend(1);
 myLintedList.insert(2, 99);
 myLintedList.remove(0);
 myLintedList.remove(34);
+console.log("linked list looks like: ", JSON.stringify(myLintedList.head));
 console.log(myLintedList.printList());
