@@ -1,49 +1,25 @@
-const basket = ["apples", "oranges", "grapes"];
-
-//linked list would be:
-
-// apples
-//     8923 --> oranges
-//                 8924 --> grapes
-//                             8925 --> null
-
-// Pointer: reference to another place in memory, object, data...
-//Example:
-const obj1 = { a: true };
-const obj2 = obj1;
-
-// build a linked list
-
-// let myLinkedList = {
-//   head: {
-//     value: 10,
-//     next: {
-//       value: 5,
-//       next: {
-//         value: 16,
-//         next: null,
-//       },
-//     },
-//   },
-// };
 class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
+    this.prev = null;
   }
 }
 
-class LinkedList {
+class doubleLinkedList {
   constructor(value) {
     this.head = {
       value: value,
       next: null,
+      prev: null,
     };
     this.tail = this.head;
     this.length = 1;
   }
+
   append(value) {
     const newNode = new Node(value);
+    newNode.prev = this.tail;
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -53,6 +29,7 @@ class LinkedList {
   prepend(value) {
     const newNode = new Node(value);
     newNode.next = this.head;
+    this.head.prev = newNode;
     this.head = newNode;
     this.length++;
     return this;
@@ -74,14 +51,17 @@ class LinkedList {
       return this.printList();
     }
     if (index >= this.length) {
+      console.log(index, this.length);
       this.append(value);
       return this.printList();
     }
     const newNode = new Node(value);
     const leader = this._traverseToIndex(index - 1);
-    const holdintPointer = leader.next;
+    const follower = leader.next;
     leader.next = newNode;
-    newNode.next = holdintPointer;
+    newNode.prev = leader;
+    newNode.next = follower;
+    follower.prev = newNode;
     this.length++;
     return this;
   }
@@ -89,18 +69,22 @@ class LinkedList {
   remove(index) {
     if (index === 0) {
       this.head = this.head.next;
+      this.head.prev = null;
       this.length--;
       return this;
     }
     if (index > this.length) {
       const leader = this._traverseToIndex(this.length - 2);
       leader.next = null;
+      leader.prev = this.tail.prev;
+      this.tail = leader;
       this.length--;
       return this;
     }
     const leader = this._traverseToIndex(index - 1);
     const holdintPointer = leader.next.next;
     leader.next = holdintPointer;
+    holdintPointer.prev = leader;
     this.length--;
     return this;
   } //On
@@ -116,13 +100,11 @@ class LinkedList {
   }
 }
 
-const myLintedList = new LinkedList(10);
+const myLintedList = new doubleLinkedList(10);
+myLintedList.append(5);
 myLintedList.append(16);
-myLintedList.append(24);
-myLintedList.append("delete me");
-myLintedList.prepend(1);
-myLintedList.insert(2, 99);
-myLintedList.remove(0);
-myLintedList.remove(34);
-console.log("linked list looks like: ", JSON.stringify(myLintedList.head));
+myLintedList.prepend(35);
+myLintedList.insert(15, 44);
+myLintedList.remove(1);
+console.log("linked list looks like: ", myLintedList.remove(10));
 console.log(myLintedList.printList());
