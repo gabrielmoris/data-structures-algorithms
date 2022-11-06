@@ -76,7 +76,7 @@ class doubleLinkedList {
     if (index > this.length) {
       const leader = this._traverseToIndex(this.length - 2);
       leader.next = null;
-      leader.prev = this.tail.prev;
+      leader.prev = this.tail.prev.prev;
       this.tail = leader;
       this.length--;
       return this;
