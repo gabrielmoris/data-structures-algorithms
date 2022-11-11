@@ -117,4 +117,3 @@ myLintedList.append(24);
 // myLintedList.reverse();
 console.log("linked list looks like: ", JSON.stringify(myLintedList.head));
 console.log(myLintedList.printList());
-console.log(myLintedList.tail, myLintedList.tail.next);
