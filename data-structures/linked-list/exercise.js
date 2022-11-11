@@ -16,6 +16,7 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
+
   append(value) {
     const newNode = new Node(value);
     this.tail.next = newNode;
@@ -31,6 +32,7 @@ class LinkedList {
     this.length++;
     return this;
   } //O1
+
   printList() {
     const array = [];
     let currentNode = this.head;
@@ -45,11 +47,11 @@ class LinkedList {
   insert(index, value) {
     if (index === 0) {
       this.prepend(value);
-      return this.printList();
+      return this;
     }
     if (index >= this.length) {
       this.append(value);
-      return this.printList();
+      return this;
     }
     const newNode = new Node(value);
     const leader = this._traverseToIndex(index - 1);
@@ -112,6 +114,7 @@ class LinkedList {
 const myLintedList = new LinkedList(10);
 myLintedList.append(16);
 myLintedList.append(24);
-myLintedList.reverse();
+// myLintedList.reverse();
 console.log("linked list looks like: ", JSON.stringify(myLintedList.head));
 console.log(myLintedList.printList());
+console.log(myLintedList.tail, myLintedList.tail.next);
