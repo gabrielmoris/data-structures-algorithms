@@ -5,6 +5,7 @@ class Graph {
   }
   addVertex(node) {
     this.adjacentList[node] = [];
+    this.numberOfNodes++;
     return this;
   }
   addEdge(node1, node2) {
