@@ -2,7 +2,6 @@
 //One should use recursive, the other should just use a for loop
 
 let answer;
-let answer2;
 function findFactorialRecursive(number) {
   if (number === 1) {
     return answer;
@@ -15,8 +14,17 @@ function findFactorialRecursive(number) {
   }
   return findFactorialRecursive(number);
 }
+// Better version
+
+function findFactorialRecursive2(number) {
+  if (number === 1) {
+    return number;
+  }
+  return number * findFactorialRecursive2(number - 1);
+}
 
 function findFactorialIterative(number) {
+  let answer2;
   for (let i = number; i > 1; i--) {
     if (!answer2) {
       answer2 = i;
@@ -29,4 +37,5 @@ function findFactorialIterative(number) {
 }
 
 console.log(findFactorialRecursive(5)); //120
+console.log(findFactorialRecursive2(5)); //120
 console.log(findFactorialIterative(5)); //120
