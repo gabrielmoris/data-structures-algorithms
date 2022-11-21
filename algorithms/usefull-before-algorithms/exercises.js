@@ -21,7 +21,7 @@ function findFactorialRecursive2(number) {
     return number;
   }
   return number * findFactorialRecursive2(number - 1);
-}
+} //On
 
 function findFactorialIterative(number) {
   let answer2;
@@ -34,7 +34,7 @@ function findFactorialIterative(number) {
   }
 
   return answer2;
-}
+} //On
 
 console.log(findFactorialRecursive(5)); //120
 console.log(findFactorialRecursive2(5)); //120
