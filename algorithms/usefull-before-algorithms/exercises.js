@@ -47,15 +47,35 @@ function fibonacciIterative(n) {
     arr.push(arr[i - 2] + arr[i - 1]);
   }
   return arr[n];
-}
+} //On
 
 function fibonacciRecursive(n) {
   if (n < 2) {
     return n;
   }
-  console.log(n);
   return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+} //O2^n
+
+// console.log(fibonacciIterative(8));
+// console.log(fibonacciRecursive(8));
+
+//Implement a function that reverses a string using iteration...and then recursion!
+function reverseStringIterative(str) {
+  arr = [];
+  for (let i = 0; i < str.length; i++) {
+    arr.unshift(str[i]);
+  }
+  return arr.join("");
 }
 
-console.log(fibonacciIterative(8));
-console.log(fibonacciRecursive(8));
+function reverseStringRecursive(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return reverseStringRecursive(str.substr(1)) + str.charAt(0);
+  }
+}
+
+// console.log(reverseStringIterative("yoyo mastery"));
+console.log(reverseStringRecursive("yoyo mastery"));
+//should return: 'yretsam oyoy'
