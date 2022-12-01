@@ -15,7 +15,7 @@ function bubbleSort(array) {
       }
     }
   }
-}
+} //On2
 
 bubbleSort(numbers);
 console.log(numbers);
