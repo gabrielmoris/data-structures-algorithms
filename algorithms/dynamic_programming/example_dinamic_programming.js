@@ -7,9 +7,9 @@ function fibonacci(n) {
     return n;
   }
   return fibonacci(n - 1) + fibonacci(n - 2);
-} // On²
+} // O2^n
 
-// This function is On² trying with 50 would be impossible for the computer
+// This function is 2^n trying with 50 would be impossible for the computer
 console.log("1. Function", fibonacci(30));
 console.log("1. Number of Calculations", calculations);
 
