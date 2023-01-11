@@ -35,3 +35,15 @@ function memoizedFibonacci() {
 const fibo = memoizedFibonacci();
 console.log("2. Function", fibo(300));
 console.log("2. Number of Calculations", calculations);
+
+// there is also another approach (bottom up) Without recursion
+
+function fiboBottom(n) {
+  let answer = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    answer.push(answer[i - 2] + answer[i - 1]);
+  }
+  return answer.pop();
+}
+
+console.log("bottom up approach", fiboBottom(100));
