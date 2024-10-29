@@ -2,7 +2,7 @@
 
 [Data Structures and Algorithms Diagram](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link)
 
-## Big O
+## **Big O**
 
 ### Big Os
 
@@ -16,6 +16,8 @@
 
 - **Iterating through half a collection is still O(n)**
 - **Two separate collections: O(a \* b)**
+
+![image](image.png)
 
 ### Rule Book
 
