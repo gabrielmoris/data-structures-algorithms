@@ -1,4 +1,5 @@
 import * as readline from "readline";
+import { idText } from "typescript";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -11,6 +12,16 @@ const factorial: any = (n: any) => {
   return n * factorial(n - 1);
 };
 
+// Function to create nested loops
+function createNestedLoops(arr: any[]): void {
+  const latestElement = arr[arr.length - 1];
+  const newArr = arr.slice(0, -1);
+  if (!newArr.length) return;
+  for (let i = 0; i < latestElement; i++) {
+    createNestedLoops(newArr);
+  }
+}
+
 // BigO Functions
 async function getUserInput(): Promise<string> {
   return new Promise((resolve) => {
@@ -18,7 +29,8 @@ async function getUserInput(): Promise<string> {
       ` Hello! Which bigO do you want to measure?
        n => O(n) Lineal 
        1 => O(1) Constant Time
-       n2 => =(n^2) Cuadratic
+       n2 => =(n^2) Quadratic
+       n! => =(n!) Factorial
        `,
       (answer: string) => {
         resolve(answer.trim());
@@ -78,9 +90,26 @@ async function measureQuadratic(
     const start = performance.now();
     for (let j = 0; j < arr.length; j++) {
       for (let k = 0; k < arr.length; k++) {
-        let l = factorial(2);
+        // Perform a more intensive operation to increase the runtime
+        let l = factorial(5);
       }
     }
+    const end = performance.now();
+    if (i > 1)
+      results.push({ name: inputSizes[i].toLocaleString(), time: end - start });
+  }
+
+  return results;
+}
+
+async function measureFactorial(
+  inputSizes: number[]
+): Promise<{ name: string; time: number }[]> {
+  const results: { name: string; time: number }[] = [];
+
+  for (let i = 0; i < inputSizes.length; i++) {
+    const start = performance.now();
+    createNestedLoops(inputSizes);
     const end = performance.now();
     if (i > 1)
       results.push({ name: inputSizes[i].toLocaleString(), time: end - start });
@@ -104,7 +133,11 @@ async function main() {
         results = await measureConstantTime();
         break;
       case "n2":
-        results = await measureQuadratic([1, 10, 100, 1_000, 10_000, 100_000]);
+        results = await measureQuadratic([1, 1, 10, 100, 1_000, 10_000]);
+        break;
+      case "n!":
+        // CHECK THIS CASE
+        results = await measureFactorial([1, 1, 10, 100]);
         break;
       default:
         console.log("Invalid input. Please try again.");
