@@ -5,12 +5,20 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+// Function to make the machine slower
+const factorial: any = (n: any) => {
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
+};
+
+// BigO Functions
 async function getUserInput(): Promise<string> {
   return new Promise((resolve) => {
     rl.question(
       ` Hello! Which bigO do you want to measure?
        n => O(n) Lineal 
        1 => O(1) Constant Time
+       n2 => =(n^2) Cuadratic
        `,
       (answer: string) => {
         resolve(answer.trim());
@@ -22,22 +30,21 @@ async function getUserInput(): Promise<string> {
 async function measureOnTime(
   inputSizes: number[]
 ): Promise<{ name: string; time: number }[]> {
-  const factorial: any = (n: any) => {
-    if (n === 0 || n === 1) return 1;
-    return n * factorial(n - 1);
-  };
-
   const results = [];
 
-  for (const size of inputSizes) {
-    const arr = new Array(size).fill(0);
+  for (let i = 0; i < inputSizes.length; i++) {
+    const arr = new Array(inputSizes[i]).fill(0);
     const start = performance.now();
-    for (let i = 0; i < arr.length; i++) {
-      let j = factorial(arr[i]);
+    for (let j = 0; j < arr.length; j++) {
+      let k = factorial(5);
     }
-
     const end = performance.now();
-    results.push({ name: size.toLocaleString(), time: end - start });
+    // Because of the Nature of performance method,
+    // I need to make the resolution of the method higher to measure a more consistent time.
+    // I show only the last 10 Items that have more consistent time.
+    if (i > 1) {
+      results.push({ name: inputSizes[i].toLocaleString(), time: end - start });
+    }
   }
 
   return results;
@@ -61,6 +68,27 @@ async function measureConstantTime(): Promise<
   return results;
 }
 
+async function measureQuadratic(
+  inputSizes: number[]
+): Promise<{ name: string; time: number }[]> {
+  const results = [];
+
+  for (let i = 0; i < inputSizes.length; i++) {
+    const arr = new Array(inputSizes[i]).fill(0);
+    const start = performance.now();
+    for (let j = 0; j < arr.length; j++) {
+      for (let k = 0; k < arr.length; k++) {
+        let l = factorial(2);
+      }
+    }
+    const end = performance.now();
+    if (i > 1)
+      results.push({ name: inputSizes[i].toLocaleString(), time: end - start });
+  }
+
+  return results;
+}
+
 async function main() {
   try {
     const userChoice = await getUserInput();
@@ -69,11 +97,14 @@ async function main() {
     switch (userChoice) {
       case "n":
         results = await measureOnTime([
-          10_000, 100_000, 1_000_000, 10_000_000, 100_000_000,
+          100, 1_000, 10_000, 100_000, 1_000_000, 10_000_000, 100_000_000,
         ]);
         break;
       case "1":
         results = await measureConstantTime();
+        break;
+      case "n2":
+        results = await measureQuadratic([1, 10, 100, 1_000, 10_000, 100_000]);
         break;
       default:
         console.log("Invalid input. Please try again.");

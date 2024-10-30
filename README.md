@@ -4,6 +4,8 @@
 
 ## **Big O**
 
+To see the Big O examples run `bun TS/BigO/index.ts`
+
 ### Big Os
 
 - **O(1)**: Constant – no loops
@@ -17,14 +19,16 @@
 - **Iterating through half a collection is still O(n)**
 - **Two separate collections: O(a \* b)**
 
-![image](image.png)
+[![image](image.png)](https://www.bigocheatsheet.com/)
+
+<a style="color:gray; font-size: 0.5rem;" href="https://www.bigocheatsheet.com/" target="_blank">Click in the image to see more</a>
 
 ### Rule Book
 
 1. Always worst Case
-2. Remove Constantsç
-3. Different inputs => Different variables. A & B variables nested would be =(a\*b)
-4. Drop`non Dominant terms
+2. Remove Constants => If i have O(2n + 100) at the end is same as O(n)
+3. Different inputs => Different variables or args. A & B variables nested would be O(a+b)
+4. Drop non Dominant terms
 
 ### What causes Space Complexity?
 
