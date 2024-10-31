@@ -15,6 +15,7 @@ const factorial: any = (n: any) => {
 function createNestedLoops(n: number): void {
   if (n <= 1) return;
   for (let i = 0; i < n; i++) {
+    factorial(n);
     createNestedLoops(n - 1);
   }
 }

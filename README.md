@@ -6,7 +6,7 @@
 
 To see the Big O examples run `bun TS/BigO/index.ts`
 
-### Big Os
+### Big Os (Time Complexity)
 
 - **O(1)**: Constant – no loops
 - **O(log N)**: Logarithmic – usually searching algorithms have log n if they are sorted (Binary Search)
@@ -36,3 +36,37 @@ To see the Big O examples run `bun TS/BigO/index.ts`
 - Data Structures
 - Function Call
 - Allocations
+
+### Big Os (Space Complexity)
+
+**Heap**: Variables, Values
+**Stack**: Keep Track of functions
+
+#### What Causes Space Complexity?
+
+Variables, Data Structures, Function Calls, Allocations
+
+The Space Complexity follows the same pattern as Time. For example On would be a function that adds data in memory as the number of input grows.
+
+```javascript
+//O(n) => bigger n, bigger arr
+function createArray(input) {
+  let arr = [];
+  for (let i = 0; i < input.length; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+```
+
+## **Good Code**
+
+["Premature optimization can be the root of all evil"](https://stackify.com/premature-optimization-evil/)
+
+- Readability: DRY, Clear Naming, avoid "Cleverness", self-documenting, consistent
+- Scalability:
+  - Design: Modular, Separation of Concern, extensible, SOLID principles
+  - Speed: Time Complexity
+  - Memory: Space Complexity
+- Maintainability: Version Control, Clear Deendency Management, Well organized (folder structure)
+- Reliability: Error Handling, Input validations, Defensive program Techniques, Tests (TDD, Unit, Integration...)
