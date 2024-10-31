@@ -1,5 +1,4 @@
 import * as readline from "readline";
-import { idText } from "typescript";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -13,12 +12,10 @@ const factorial: any = (n: any) => {
 };
 
 // Function to create nested loops
-function createNestedLoops(arr: any[]): void {
-  const latestElement = arr[arr.length - 1];
-  const newArr = arr.slice(0, -1);
-  if (!newArr.length) return;
-  for (let i = 0; i < latestElement; i++) {
-    createNestedLoops(newArr);
+function createNestedLoops(n: number): void {
+  if (n <= 1) return;
+  for (let i = 0; i < n; i++) {
+    createNestedLoops(n - 1);
   }
 }
 
@@ -108,11 +105,18 @@ async function measureFactorial(
   const results: { name: string; time: number }[] = [];
 
   for (let i = 0; i < inputSizes.length; i++) {
+    const size = inputSizes[i];
     const start = performance.now();
-    createNestedLoops(inputSizes);
+    createNestedLoops(size);
     const end = performance.now();
-    if (i > 1)
-      results.push({ name: inputSizes[i].toLocaleString(), time: end - start });
+
+    // Only add results for inputs > 1 to avoid skewing
+    if (size > 1) {
+      results.push({
+        name: size.toLocaleString(),
+        time: end - start,
+      });
+    }
   }
 
   return results;
@@ -133,11 +137,12 @@ async function main() {
         results = await measureConstantTime();
         break;
       case "n2":
-        results = await measureQuadratic([1, 1, 10, 100, 1_000, 10_000]);
+        results = await measureQuadratic([
+          1, 1, 2, 4, 8, 10, 100, 1_000, 10_000,
+        ]);
         break;
       case "n!":
-        // CHECK THIS CASE
-        results = await measureFactorial([1, 1, 10, 100]);
+        results = await measureFactorial([1, 1, 1, 2, 4, 8, 9, 10, 11, 12]);
         break;
       default:
         console.log("Invalid input. Please try again.");
