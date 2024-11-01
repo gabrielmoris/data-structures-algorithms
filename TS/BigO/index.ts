@@ -7,7 +7,7 @@ const rl = readline.createInterface({
 });
 
 // Function to make the machine slower
-const factorial: any = (n: any) => {
+const factorial: any = (n: number) => {
   if (n === 0 || n === 1) return 1;
   return n * factorial(n - 1);
 };

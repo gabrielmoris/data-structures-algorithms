@@ -70,3 +70,25 @@ function createArray(input) {
   - Memory: Space Complexity
 - Maintainability: Version Control, Clear Deendency Management, Well organized (folder structure)
 - Reliability: Error Handling, Input validations, Defensive program Techniques, Tests (TDD, Unit, Integration...)
+
+## Solve a Coding Problem Sep by Step
+
+This steps will ensure the proper approach for any Interview Question
+
+1. Understand:
+   - Write down the key points
+   - Double check (what are inputs, outputs...)
+   - Know what it is the most impotant value of the problem
+   - Ask as many questions as I need
+2. Prepare:
+   - Start by brute force approach. **First make it work** Just speaking and no coding.
+   - Evaluate the approach (Big O, Constraints, bottlenecks...)
+   - Write Down the steps I will follow (modularize from beggining)
+3. Execute:
+   - Start Writting the code
+   - Think about error handling
+   - Name the variables properly
+4. Testing:
+   - Test the code
+   - Tell where Could I improve the code
+   - Answer possible questions
