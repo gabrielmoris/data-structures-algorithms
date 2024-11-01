@@ -83,7 +83,7 @@ This steps will ensure the proper approach for any Interview Question
 2. Prepare:
    - Start by brute force approach. **First make it work** Just speaking and no coding.
    - Evaluate the approach (Big O, Constraints, bottlenecks...)
-   - Write Down the steps I will follow (modularize from beggining)
+   - Write Down the steps I will follow (modularize from beginning)
 3. Execute:
    - Start Writting the code
    - Think about error handling
