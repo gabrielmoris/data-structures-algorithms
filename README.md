@@ -92,3 +92,37 @@ This steps will ensure the proper approach for any Interview Question
    - Test the code
    - Tell where Could I improve the code
    - Answer possible questions
+
+# Data structures
+
+It determines the way we organize a collection of values. Each Data structure is specialized for different purposes.
+
+[It is important to understand how the computers allocate the memory and stores Data](https://statmath.wu.ac.at/courses/data-analysis/itdtHTML/node55.html)
+
+The most used **Data structures** are:
+
+| Data Structure   | Insertion                                                                                                  | Deletion                                                                                                   | Traversal                                | Searching                                                                                            | Sorting                                        |
+| ---------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Arrays           | <span style="color: blue;">O(1)</span> at end, <span style="color: red;">O(n)</span> at arbitrary position | <span style="color: blue;">O(1)</span> at end, <span style="color: red;">O(n)</span> at arbitrary position | <span style="color: blue;">O(n)</span>   | <span style="color: yellow;">O(n)</span> unsorted, <span style="color: blue;">O(log n)</span> sorted | <span style="color: yellow;">O(n log n)</span> |
+| Stacks           | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(n)</span>   | <span style="color: red;">O(n)</span>                                                                | <span style="color: red;">N/A</span>           |
+| Queues           | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(n)</span>   | <span style="color: red;">O(n)</span>                                                                | <span style="color: red;">N/A</span>           |
+| Linked Lists     | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(1)</span> if position known, otherwise <span style="color: red;">O(n)</span>  | <span style="color: blue;">O(n)</span>   | <span style="color: red;">O(n)</span>                                                                | <span style="color: yellow;">O(n log n)</span> |
+| Trees (balanced) | <span style="color: yellow;">O(log n)</span>                                                               | <span style="color: yellow;">O(log n)</span>                                                               | <span style="color: blue;">O(n)</span>   | <span style="color: yellow;">O(log n)</span>                                                         | <span style="color: yellow;">O(n log n)</span> |
+| Tries            | <span style="color: yellow;">O(k)</span> where k is key length                                             | <span style="color: yellow;">O(k)</span> where k is key length                                             | <span style="color: blue;">O(n)</span>   | <span style="color: yellow;">O(k)</span> where k is key length                                       | <span style="color: blue;">O(n)</span>         |
+| Graphs           | <span style="color: yellow;">O(1)</span> for vertex, <span style="color: yellow;">O(1)</span> for edge     | <span style="color: yellow;">O(V+E)</span> for vertex, <span style="color: yellow;">O(E)</span> for edge   | <span style="color: blue;">O(V+E)</span> | <span style="color: red;">O(V+E)</span>                                                              | <span style="color: red;">N/A</span>           |
+| Hash Tables      | <span style="color: blue;">O(1)</span> average, <span style="color: red;">O(n)</span> worst                | <span style="color: blue;">O(1)</span> average, <span style="color: red;">O(n)</span> worst                | <span style="color: blue;">O(n)</span>   | <span style="color: blue;">O(1)</span> average, <span style="color: red;">O(n)</span> worst          | <span style="color: red;">N/A</ span>          |
+
+Color coding:
+
+- <font color='blue'>Blue</font>: Good performance
+- <font color='yellow'>Yellow</font>: Moderate performance
+- <font color='red'>Red</font>: Poor performance or not applicable
+
+The most used Algorithms are:
+
+- Sorting
+- Dynamic PRogramming
+- BFS + DFS (Search)
+- Recursion
+
+## Arrays
