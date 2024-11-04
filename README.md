@@ -101,22 +101,20 @@ It determines the way we organize a collection of values. Each Data structure is
 
 The most used **Data structures** are:
 
-| Data Structure   | Insertion                                                                                                  | Deletion                                                                                                   | Traversal                                | Searching                                                                                            | Sorting                                        |
-| ---------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Arrays           | <span style="color: blue;">O(1)</span> at end, <span style="color: red;">O(n)</span> at arbitrary position | <span style="color: blue;">O(1)</span> at end, <span style="color: red;">O(n)</span> at arbitrary position | <span style="color: blue;">O(n)</span>   | <span style="color: yellow;">O(n)</span> unsorted, <span style="color: blue;">O(log n)</span> sorted | <span style="color: yellow;">O(n log n)</span> |
-| Stacks           | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(n)</span>   | <span style="color: red;">O(n)</span>                                                                | <span style="color: red;">N/A</span>           |
-| Queues           | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(n)</span>   | <span style="color: red;">O(n)</span>                                                                | <span style="color: red;">N/A</span>           |
-| Linked Lists     | <span style="color: blue;">O(1)</span>                                                                     | <span style="color: blue;">O(1)</span> if position known, otherwise <span style="color: red;">O(n)</span>  | <span style="color: blue;">O(n)</span>   | <span style="color: red;">O(n)</span>                                                                | <span style="color: yellow;">O(n log n)</span> |
-| Trees (balanced) | <span style="color: yellow;">O(log n)</span>                                                               | <span style="color: yellow;">O(log n)</span>                                                               | <span style="color: blue;">O(n)</span>   | <span style="color: yellow;">O(log n)</span>                                                         | <span style="color: yellow;">O(n log n)</span> |
-| Tries            | <span style="color: yellow;">O(k)</span> where k is key length                                             | <span style="color: yellow;">O(k)</span> where k is key length                                             | <span style="color: blue;">O(n)</span>   | <span style="color: yellow;">O(k)</span> where k is key length                                       | <span style="color: blue;">O(n)</span>         |
-| Graphs           | <span style="color: yellow;">O(1)</span> for vertex, <span style="color: yellow;">O(1)</span> for edge     | <span style="color: yellow;">O(V+E)</span> for vertex, <span style="color: yellow;">O(E)</span> for edge   | <span style="color: blue;">O(V+E)</span> | <span style="color: red;">O(V+E)</span>                                                              | <span style="color: red;">N/A</span>           |
-| Hash Tables      | <span style="color: blue;">O(1)</span> average, <span style="color: red;">O(n)</span> worst                | <span style="color: blue;">O(1)</span> average, <span style="color: red;">O(n)</span> worst                | <span style="color: blue;">O(n)</span>   | <span style="color: blue;">O(1)</span> average, <span style="color: red;">O(n)</span> worst          | <span style="color: red;">N/A</ span>          |
+| Data Structure   | Insertion                                   | Deletion                                    | Traversal | Searching                      | Sorting    |
+| ---------------- | ------------------------------------------- | ------------------------------------------- | --------- | ------------------------------ | ---------- |
+| Arrays           | **O(1)** at end, O(n) at arbitrary position | **O(1)** at end, O(n) at arbitrary position | O(n)      | O(n) unsorted, O(log n) sorted | O(n log n) |
+| Stacks           | **O(1)**                                    | **O(1)**                                    | O(n)      | O(n)                           | N/A        |
+| Queues           | **O(1)**                                    | **O(1)**                                    | O(n)      | O(n)                           | N/A        |
+| Linked Lists     | **O(1)**                                    | **O(1)** if position known, otherwise O(n)  | O(n)      | O(n)                           | O(n log n) |
+| Trees (balanced) | O(log n)                                    | O(log n)                                    | O(n)      | O(log n)                       | O(n log n) |
+| Tries            | O(k), where k is key length                 | O(k), where k is key length                 | O(n)      | O(k), where k is key length    | O(n)       |
+| Graphs           | **O(1)** for vertex, **O(1)** for edge      | O(V+E) for vertex, O(E) for edge            | O(V+E)    | O(V+E)                         | N/A        |
+| Hash Tables      | **O(1)** average, O(n) worst                | **O(1)** average, O(n) worst                | O(n)      | **O(1)** average, O(n) worst   | N/A        |
 
-Color coding:
+**Note:**
 
-- <font color='blue'>Blue</font>: Good performance
-- <font color='yellow'>Yellow</font>: Moderate performance
-- <font color='red'>Red</font>: Poor performance or not applicable
+- "N/A" indicates that the operation is not applicable for that data structure.
 
 The most used Algorithms are:
 
