@@ -124,3 +124,34 @@ The most used Algorithms are:
 - Recursion
 
 ## Arrays
+
+[Array Implementation](TS/DataStructures/arrays.ts)
+They are stored in contiguos memory making them to have a small footprint. There are 2 types of arrays
+
+1. Static: they are specific in size
+1. Dynamic: the size changes. In background copies the array and allocates the array with the new size in another block of memory.
+
+```cpp
+int a[5] = {1, 2, 3, 4, 5};
+int newSize = 6;
+int* newArray = new int[newSize];
+
+// Copy existing elements
+for (int i = 0; i < 5; i++) {
+    newArray[i] = a[i];
+}
+
+// Add new element
+newArray[5] = 6;
+
+// Don't forget to delete the dynamically allocated array when done
+delete[] newArray;
+```
+
+**Good for:** Lockup, push
+**Methods:**
+
+- pop() => O(1)
+- push() => O(1)
+- unshift() => O(n)
+- splice() => O(n)
