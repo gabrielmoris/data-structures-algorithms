@@ -131,8 +131,12 @@ They are stored in contiguos memory making them to have a small footprint. There
 1. Static: they are specific in size
 1. Dynamic: the size changes. In background copies the array and allocates the array with the new size in another block of memory.
 
+**How a Dynamic array is adapted each time we add new elements**:
+
 ```cpp
+// Create STATIC array
 int a[5] = {1, 2, 3, 4, 5};
+// Change size
 int newSize = 6;
 int* newArray = new int[newSize];
 
@@ -152,6 +156,6 @@ delete[] newArray;
 **Methods:**
 
 - pop() => O(1)
-- push() => O(1)
+- push() => Normally O(1), but if it has to allocate it in another block of memory it becomes O(n)
 - unshift() => O(n)
 - splice() => O(n)
