@@ -159,3 +159,5 @@ delete[] newArray;
 - push() => Normally O(1), but if it has to allocate it in another block of memory it becomes O(n)
 - unshift() => O(n)
 - splice() => O(n)
+
+<a style="font-size: 0.6rem; font-weight: bold;" href="TS/DataStructures/classes-explanation.ts">\* Note about classes </a>
