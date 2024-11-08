@@ -152,8 +152,10 @@ newArray[5] = 6;
 delete[] newArray;
 ```
 
-**Good for:** Lockup, push
-**Methods:**
+**Good for:** Lockup, push/pop, Sorting
+**Not good for:** Inserts, Deletion, If they are static they have fixed size
+
+**Performance:**
 
 - pop() => O(1)
 - push() => Normally O(1), but if it has to allocate it in another block of memory it becomes O(n)
@@ -161,3 +163,51 @@ delete[] newArray;
 - splice() => O(n)
 
 <a style="font-size: 0.6rem; font-weight: bold;" href="TS/DataStructures/classes-explanation.ts">\* Note about classes </a>
+
+<p style="font-size: 0.6rem; font-weight: bold;">* Strings can be treated as Arrays</p>
+
+## Hash Tables (Objects in JS)
+
+[Hash Table Implementation](TS/DataStructures/hash-tables.ts)
+Hash tables are data structures that store key-value pairs, allowing for efficient retrieval and insertion of data. In JavaScript, objects essentially function as hash tables.
+
+**How Hash Tables Work**
+
+- Hashing Function: When you create a key-value pair in a JavaScript object, the key is passed through a hashing function. This function converts the key into a numeric hash code.
+- Array Index: The hash code is then used to determine the index in an underlying array where the value will be stored.
+- Storage: The value is stored at this calculated index in the array.
+- Retrieval: When you access a value using its key, the same hashing process occurs to find the correct array index.
+
+**Collision Handling**
+Sometimes, different keys may produce the same hash code, leading to collisions. JavaScript engines handle this internally, often using techniques like:
+
+- Chaining: Multiple values at the same index are stored in a linked list.
+- Open Addressing: If a collision occurs, the engine looks for the next available slot.
+
+**In JavaScript, this process is abstracted away, but conceptually:**
+
+```javascript
+let obj = {};
+
+// When you do this:
+obj["name"] = "Pepe";
+
+// JavaScript internally does something like:
+let hashCode = hashFunction("name");
+let index = hashCode % arraySize;
+internalArray[index] = "Pepe";
+```
+
+**Good for:** Most of the cases is O(1)
+**Not good for:** When It handles collisions It becomes O(n) because it stores the data using a Linked List in the memory address
+
+**Performance:**
+
+- Insert => O(1)
+- Lookup => O(1)
+- Delete => O(1)
+- Search => O(1)
+
+**Javascript has:**
+Map => It can use any data type as a _key_ and it mantains _Insertion Order_
+Sets => It only stores Keys. No values.
