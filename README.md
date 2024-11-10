@@ -71,7 +71,11 @@ function createArray(input) {
 - Maintainability: Version Control, Clear Deendency Management, Well organized (folder structure)
 - Reliability: Error Handling, Input validations, Defensive program Techniques, Tests (TDD, Unit, Integration...)
 
-## Solve a Coding Problem Sep by Step
+## Tips about better Code
+
+- Hash Tables are usually the best idea to improve Time Compexity
+- If it is a sorted array, Divide and Conquer is a good idea (Binary Tree)
+- Sometimes is a good Idea to sort the input
 
 This steps will ensure the proper approach for any Interview Question
 
@@ -92,6 +96,8 @@ This steps will ensure the proper approach for any Interview Question
    - Test the code
    - Tell where Could I improve the code
    - Answer possible questions
+
+## Solve a Coding Problem Sep by Step
 
 # Data structures
 
@@ -199,7 +205,7 @@ internalArray[index] = "Pepe";
 ```
 
 **Good for:** Most of the cases is O(1)
-**Not good for:** When It handles collisions It becomes O(n) because it stores the data using a Linked List in the memory address
+**Not good for:** When It handles collisions It becomes O(n) because it stores the data using a Linked List in the memory address. They are unordered. Slow Keys interation O(n²).
 
 **Performance:**
 
@@ -209,5 +215,36 @@ internalArray[index] = "Pepe";
 - Search => O(1)
 
 **Javascript has:**
+
 Map => It can use any data type as a _key_ and it mantains _Insertion Order_
+
 Sets => It only stores Keys. No values.
+
+## Linked List
+
+[Singly Linked List Implementation](TS/DataStructures/single-linked-list.ts)
+
+A set of structured data organized with nodes that store data and have connections to other nodes.
+
+- <u>Singly Linked List:</u> Each node contains data and a pointer to the next node.
+- <u>Doubly Linked List:</u> Each node contains data and two pointers - one to the next node and one to the previous node.
+- <u>Circular Linked List:</u> A variation where the last node points back to the first node, creating a circle
+
+**Components**
+
+- Head: The first node in the list.
+- Tail: The last node in the list (points to null in a singly linked list).
+- Nodes: Each element in the list, containing data and pointer(s).
+
+* The tail points to `null`
+
+**Good for:** Insertion and Deletion. Dynamic size.
+**Not good for:** Non Contiguos memory.
+
+**Performance:**
+
+- Prepend => O(1)
+- Append => O(1)
+- Lookup => O(n)
+- Insert => O(n)
+- Delete => O(n)
