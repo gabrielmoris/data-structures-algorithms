@@ -30,13 +30,6 @@ To see the Big O examples run `bun TS/BigO/index.ts`
 3. Different inputs => Different variables or args. A & B variables nested would be O(a+b)
 4. Drop non Dominant terms
 
-### What causes Space Complexity?
-
-- Variables
-- Data Structures
-- Function Call
-- Allocations
-
 ### Big Os (Space Complexity)
 
 **Heap**: Variables, Values
@@ -44,7 +37,10 @@ To see the Big O examples run `bun TS/BigO/index.ts`
 
 #### What Causes Space Complexity?
 
-Variables, Data Structures, Function Calls, Allocations
+- Variables
+- Data Structures
+- Function Call
+- Allocations
 
 The Space Complexity follows the same pattern as Time. For example On would be a function that adds data in memory as the number of input grows.
 
@@ -223,6 +219,7 @@ Sets => It only stores Keys. No values.
 ## Linked List
 
 [Singly Linked List Implementation](TS/DataStructures/single-linked-list.ts)
+[Doubly Linked List Implementation](TS/DataStructures/double-linked-list.ts)
 
 A set of structured data organized with nodes that store data and have connections to other nodes.
 

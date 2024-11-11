@@ -1,13 +1,15 @@
 class Node<T> {
   value: T;
   next: Node<T> | null;
+  prev: Node<T> | null;
   constructor(value: T) {
     this.value = value;
     this.next = null;
+    this.prev = null;
   }
 }
 
-class LinkedList<T> {
+class DoublyLinkedist<T> {
   head: Node<T> | null;
   tail: Node<T> | null;
   length: number;
@@ -25,6 +27,7 @@ class LinkedList<T> {
       this.tail = node;
     } else {
       this.tail.next = node;
+      node.prev = this.tail;
       this.tail = node;
     }
     this.length++;
@@ -34,8 +37,14 @@ class LinkedList<T> {
   //O(1)
   prepend(value: T): this {
     const node = new Node(value);
-    node.next = this.head;
-    this.head = node;
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
+    }
     this.length++;
     return this;
   }
@@ -43,19 +52,20 @@ class LinkedList<T> {
   //O(n)
   insert(value: T, index: number): this {
     if (index < 1) {
-      this.prepend(value);
-      return this;
+      return this.prepend(value);
     }
 
     if (index >= this.length) {
-      this.append(value);
-      return this;
+      return this.append(value);
     }
 
     const node = new Node(value);
     const currentNode = this.traverse(index - 1);
+
     if (currentNode && currentNode.next) {
       node.next = currentNode.next;
+      node.prev = currentNode;
+      currentNode.next.prev = node;
       currentNode.next = node;
       this.length++;
     }
@@ -64,18 +74,35 @@ class LinkedList<T> {
 
   //O(n)
   delete(index: number): this {
-    if (index < 1 && this.head) {
-      this.head = this.head.next;
+    if (index >= this.length || index < 0) {
       return this;
     }
 
-    if (index >= this.length) {
+    // Handle deleting first node
+    if (index === 0) {
+      if (this.head) {
+        this.head = this.head.next;
+        if (this.head) {
+          this.head.prev = null;
+        } else {
+          // If we removed the last node
+          this.tail = null;
+        }
+        this.length--;
+      }
       return this;
     }
-    // Just deleting a ointer to the target node, will make the Garbage Collector delete it as well.
+
+    // Handle deleting other nodes
     const currentNode = this.traverse(index - 1);
     if (currentNode && currentNode.next) {
       currentNode.next = currentNode.next.next;
+      if (currentNode.next) {
+        currentNode.next.prev = currentNode;
+      } else {
+        // Update tail when deleting last node
+        this.tail = currentNode;
+      }
       this.length--;
     }
     return this;
@@ -102,11 +129,12 @@ class LinkedList<T> {
   }
 }
 
-const linkedList = new LinkedList(1);
+const linkedList = new DoublyLinkedist(1);
 linkedList.append(2);
 linkedList.append(4);
 linkedList.prepend(0);
 linkedList.insert(3, 3);
+linkedList.delete(0);
 linkedList.delete(3);
 console.log(linkedList.printList());
-console.log(JSON.stringify(linkedList));
+console.log(linkedList);
