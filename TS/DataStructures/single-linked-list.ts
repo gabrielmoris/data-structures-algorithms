@@ -76,8 +76,12 @@ class LinkedList<T> {
     const currentNode = this.traverse(index - 1);
     if (currentNode && currentNode.next) {
       currentNode.next = currentNode.next.next;
+      if (index === this.length - 1) {
+        this.tail = currentNode;
+      }
       this.length--;
     }
+
     return this;
   }
 
@@ -89,6 +93,24 @@ class LinkedList<T> {
       currentNode = currentNode.next;
     }
     return arr;
+  }
+
+  reverse(): this {
+    if (!this.head || !this.head.next) return this;
+
+    let oldHead = this.head;
+    this.tail = this.head;
+    let oldNext = oldHead.next;
+
+    while (oldNext) {
+      const temp = oldNext.next;
+      oldNext.next = oldHead;
+      oldHead = oldNext;
+      oldNext = temp;
+    }
+    this.head.next = null;
+    this.head = oldHead;
+    return this;
   }
 
   private traverse(index: number): Node<T> | null {
@@ -108,5 +130,6 @@ linkedList.append(4);
 linkedList.prepend(0);
 linkedList.insert(3, 3);
 linkedList.delete(3);
+linkedList.reverse();
 console.log(linkedList.printList());
 console.log(JSON.stringify(linkedList));

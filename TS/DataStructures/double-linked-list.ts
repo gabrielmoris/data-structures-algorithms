@@ -108,6 +108,29 @@ class DoublyLinkedist<T> {
     return this;
   }
 
+  // Check this
+  reverse(): this {
+    if (!this.head || !this.head.next) return this;
+
+    let oldHead = this.head;
+    this.tail = this.head;
+    this.tail.prev = this.head.next;
+    let oldNext = oldHead.next;
+
+    while (oldNext) {
+      const temp = oldNext.next;
+      if (oldHead.prev) {
+        oldNext.prev = oldNext.next;
+      }
+      oldNext.next = oldHead;
+      oldHead = oldNext;
+      oldNext = temp;
+    }
+    this.head.next = null;
+    this.head = oldHead;
+    return this;
+  }
+
   printList(): T[] {
     const arr = [];
     let currentNode = this.head;
@@ -135,6 +158,6 @@ linkedList.append(4);
 linkedList.prepend(0);
 linkedList.insert(3, 3);
 linkedList.delete(0);
-linkedList.delete(3);
+linkedList.reverse();
 console.log(linkedList.printList());
 console.log(linkedList);

@@ -227,13 +227,15 @@ A set of structured data organized with nodes that store data and have connectio
 - <u>Doubly Linked List:</u> Each node contains data and two pointers - one to the next node and one to the previous node.
 - <u>Circular Linked List:</u> A variation where the last node points back to the first node, creating a circle
 
+<p style="font-size: 0.6rem; font-weight: bold;">*The Singly Linked List uses less memory, but it can be traversed only from Head to Tail</p>
+
 **Components**
 
 - Head: The first node in the list.
 - Tail: The last node in the list (points to null in a singly linked list).
 - Nodes: Each element in the list, containing data and pointer(s).
 
-* The tail points to `null`
+<p style="font-size: 0.6rem; font-weight: bold;">*The tail points to <u>null</u></p>
 
 **Good for:** Insertion and Deletion. Dynamic size.
 **Not good for:** Non Contiguos memory.
