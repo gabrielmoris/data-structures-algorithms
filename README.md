@@ -238,7 +238,7 @@ A set of structured data organized with nodes that store data and have connectio
 <p style="font-size: 0.6rem; font-weight: bold;">*The tail points to <u>null</u></p>
 
 **Good for:** Insertion and Deletion. Dynamic size.
-**Not good for:** Non Contiguos memory.
+**Not good for:** Non Contiguos memory. Slow Lookup.
 
 **Performance:**
 
