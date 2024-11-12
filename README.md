@@ -247,3 +247,60 @@ A set of structured data organized with nodes that store data and have connectio
 - Lookup => O(n)
 - Insert => O(n)
 - Delete => O(n)
+
+## Stacks and Queues
+
+[Stack Implementation](TS/DataStructures/stack.ts)
+[Queue Implementation](TS/DataStructures/queue.ts)
+
+Both stacks and queues are linear data structures that follow specific orders for adding and removing elements.
+
+<u>**Stack:**</u> Follows Last-In-First-Out (LIFO) principle. The last element added is the first one to be removed.
+
+<u>The implementation can be:</u>
+
+- Array: Use less memory, but resize can take O(n). It is more cache Friendly because of spatial locality.
+- Linked lists: use more Memory, but if they need to grow and shrink frequently dont need resizing operations.
+
+<u>The Parts are:</u>
+
+- Top: The most recently added element.
+- Push: Operation to add an element to the top.
+- Pop: Operation to remove the top element.
+
+<u>**Queue:**</u> Follows First-In-First-Out (FIFO) principle. The first element added is the first one to be removed.
+
+<u>The implementation can be:</u>
+
+- Linked lists: The operations will be in the Head, and will be always O(1). An implementation with arrays would require reindexing after each operation.
+
+<u>The Parts are:</u>
+
+- Front: The first element in the queue (to be removed next).
+- Rear: The last element in the queue (most recently added).
+- Enqueue: Operation to add an element to the rear.
+- Dequeue: Operation to remove an element from the front.
+
+<p style="font-size: 0.6rem; font-weight: bold;">*Stacks are often compared to a stack of plates, while queues are like a line of people waiting.</p>
+
+**Good for:** <u>Stack:</u> Function call management, undo mechanisms, expression evaluation.<u>Queue:</u> Task scheduling, breadth-first search, buffer for data streams.
+
+**Not good for:** Random access, searching for a specific element.
+
+**Performance:**
+
+<u>Stack:</u>
+
+- Lookup => O(n) <span style="font-size: 0.6rem; color: gray;">This operation is not usual</span>
+- Push => O(1)
+- Pop => O(1)
+- Peek (view top element) => O(1)
+
+<u>Queue:</u>
+
+- Lookup => O(n) <span style="font-size: 0.6rem; color: gray;">This operation is not usual</span>
+- Enqueue => O(1)
+- Dequeue => O(1)
+- Peek (view front element) => O(1)
+
+<p style="font-size: 0.6rem; font-weight: bold;">*These time complexities assume an efficient implementation. Array-based implementations might have O(n) for some operations if resizing is needed.</p>
