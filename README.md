@@ -73,6 +73,8 @@ function createArray(input) {
 - If it is a sorted array, Divide and Conquer is a good idea (Binary Tree)
 - Sometimes is a good Idea to sort the input
 
+## Solve a Coding Problem Sep by Step
+
 This steps will ensure the proper approach for any Interview Question
 
 1. Understand:
@@ -92,8 +94,6 @@ This steps will ensure the proper approach for any Interview Question
    - Test the code
    - Tell where Could I improve the code
    - Answer possible questions
-
-## Solve a Coding Problem Sep by Step
 
 # Data structures
 
