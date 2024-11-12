@@ -155,6 +155,7 @@ delete[] newArray;
 ```
 
 **Good for:** Lockup, push/pop, Sorting
+
 **Not good for:** Inserts, Deletion, If they are static they have fixed size
 
 **Performance:**
@@ -219,6 +220,7 @@ Sets => It only stores Keys. No values.
 ## Linked List
 
 [Singly Linked List Implementation](TS/DataStructures/single-linked-list.ts)
+
 [Doubly Linked List Implementation](TS/DataStructures/double-linked-list.ts)
 
 A set of structured data organized with nodes that store data and have connections to other nodes.
