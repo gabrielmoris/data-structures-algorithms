@@ -254,6 +254,7 @@ A set of structured data organized with nodes that store data and have connectio
 ## Stacks and Queues
 
 [Stack Implementation](TS/DataStructures/stack.ts)
+
 [Queue Implementation](TS/DataStructures/queue.ts)
 
 Both stacks and queues are linear data structures that follow specific orders for adding and removing elements.
