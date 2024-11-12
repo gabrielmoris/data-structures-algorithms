@@ -128,6 +128,7 @@ The most used Algorithms are:
 ## Arrays
 
 [Array Implementation](TS/DataStructures/arrays.ts)
+
 They are stored in contiguos memory making them to have a small footprint. There are 2 types of arrays
 
 1. Static: they are specific in size
