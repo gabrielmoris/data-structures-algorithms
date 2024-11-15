@@ -308,3 +308,30 @@ Both stacks and queues are linear data structures that follow specific orders fo
 - Peek (view front element) => O(1)
 
 <p style="font-size: 0.6rem; font-weight: bold;">*These time complexities assume an efficient implementation. Array-based implementations might have O(n) for some operations if resizing is needed.</p>
+
+## Trees
+
+[Binary Tree Implementation](TS/DataStructures/binary-tree.ts)
+
+Hierarchical data structure composed of nodes. Each node has a value and can have a maximum of 2 child nodes.
+
+A Linked list is some kind of tree, but whit only one lineal path.
+
+<u>Perfect Binary tree:</u> All its Nodes have 2 or 0 children. They are more eficient. Each level on the tree doubles its nodes. The number of nodes of the last leves is equal as the rest of the nodes of the tree +1.
+
+<u>Full Binary Tree:</u> All its nodes have either 0 or 2 children (Never 1)
+
+**Components**
+
+- Root: Topmost Node. It serves as the starting point.
+- Parent: Is a node which has child nodes.
+- Child: Nodes that descend from a parent.
+- Siblings: Child nodes from the same parent.
+- Leaf: Child that has no more Child.
+
+**Good for:**
+**Not good for:**
+
+**Performance:**
+
+- Search => O(log n)
