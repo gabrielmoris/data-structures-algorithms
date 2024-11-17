@@ -311,11 +311,17 @@ Both stacks and queues are linear data structures that follow specific orders fo
 
 ## Trees
 
-[Binary Tree Implementation](TS/DataStructures/binary-tree.ts)
+[Binary Search Tree Implementation](TS/DataStructures/binary-tree.ts)
+[Binary Search Tree Visual Example](https://visualgo.net/en/bst)
 
 Hierarchical data structure composed of nodes. Each node has a value and can have a maximum of 2 child nodes.
 
 A Linked list is some kind of tree, but whit only one lineal path.
+
+The binary search Tree has some rules:
+
+- All child nodes to the right of the node must be higher.
+- Each node can have max. 2 children.
 
 <u>Perfect Binary tree:</u> All its Nodes have 2 or 0 children. They are more eficient. Each level on the tree doubles its nodes. The number of nodes of the last leves is equal as the rest of the nodes of the tree +1.
 
@@ -329,8 +335,8 @@ A Linked list is some kind of tree, but whit only one lineal path.
 - Siblings: Child nodes from the same parent.
 - Leaf: Child that has no more Child.
 
-**Good for:**
-**Not good for:**
+**Good for:** In Balance Search Tree: Searching and Lookup are O(log n). It is ordered and has flexible size.
+**Not good for:** When it is unbalance operations take O(n). It has no O(1) operations.
 
 **Performance:**
 
