@@ -17,15 +17,21 @@ class BinarySearchTree<T> {
     this.root = null;
   }
 
+  // O(log n)
   insert(value: T) {
     const newNode = new BTNode(value);
 
-    if (!this.root) this.root = newNode;
+    if (!this.root) {
+      this.root = newNode;
+      return this;
+    }
 
     let currNode = this.root;
+
+    // Divide & Conquer
     while (currNode) {
       if (value === currNode.value) {
-        return; // Handle duplicate case
+        return this; // Handle duplicate case
       }
 
       if (value > currNode.value) {
@@ -46,8 +52,10 @@ class BinarySearchTree<T> {
     }
   }
 
+  // O(log n)
   lookup(value: T) {
-    let currNode = this.root;
+    if (!this.root) return null;
+    let currNode: BTNode<T> | null = this.root;
     while (currNode) {
       if (value === currNode.value) {
         return currNode;
@@ -61,7 +69,62 @@ class BinarySearchTree<T> {
     }
     return null;
   }
-  delete(value: T) {}
+
+  delete(value: T) {
+    if (!this.root) return null;
+
+    let currNode: BTNode<T> | null = this.root;
+    let parentNode: BTNode<T> | null = null;
+
+    // Find the node
+    while (currNode!.value !== value) {
+      parentNode = currNode;
+      if (value < currNode!.value) {
+        currNode = currNode!.left;
+      } else {
+        currNode = currNode!.right;
+      }
+    }
+
+    if (!currNode) return null; // 404 Not Found
+
+    // Case 1: Node to delete has no children (leaf node)
+    if (!currNode.left && !currNode.right) {
+      if (currNode === this.root) {
+        // Then it is the root
+        this.root = null;
+        return this;
+      }
+
+      if (parentNode!.left === currNode) {
+        parentNode!.left = null;
+        return this;
+      } else {
+        parentNode!.right = null;
+        return this;
+      }
+    }
+
+    // Case 2: Node has only one child
+    if (!currNode.left || !currNode.right) {
+      const child = currNode.left || currNode.right;
+      if (currNode === this.root) {
+        // Then it is the root
+        this.root = child;
+        return this;
+      }
+
+      if (parentNode!.left === currNode) {
+        parentNode!.left = child;
+        return this;
+      } else {
+        parentNode!.right = child;
+        return this;
+      }
+    }
+
+    // Case 3: Node has two children
+  }
 }
 
 function traverse<T>(node: BTNode<T>): BTNode<T> {
@@ -80,7 +143,9 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-console.log(chalk.red("Lookup 4", JSON.stringify(tree.lookup(4))), "\n\n");
+tree.delete(1);
+tree.delete(4);
+console.log(chalk.red("Lookup 1", JSON.stringify(tree.lookup(1))), "\n\n");
 
 if (tree.root) console.log(chalk.green(JSON.stringify(traverse(tree.root))));
 
@@ -90,9 +155,9 @@ if (tree.root) console.log(chalk.green(JSON.stringify(traverse(tree.root))));
       4       20
     /  \     /  \
    1    6   15   170
-   {
-
-  /// RESULT ///
+   
+   /// RESULT ///
+{
   value: 9,
   right: {
     value: 20,
