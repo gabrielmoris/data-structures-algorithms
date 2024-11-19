@@ -124,6 +124,35 @@ class BinarySearchTree<T> {
     }
 
     // Case 3: Node has two children
+    // Find successor (smallest value in right subtree)
+    // Replace current node with successor
+    // Fix the connections
+    let successorParent = currNode;
+    let successor = currNode.right;
+
+    while (successor.left) {
+      successorParent = successor;
+      successor = successor.left;
+    }
+
+    if (successorParent !== currNode) {
+      successorParent.left = successor.right;
+      successor.right = currNode.right;
+    }
+
+    successor.left = currNode.left;
+
+    // If deleting root
+    if (currNode === this.root) {
+      this.root = successor;
+    } else {
+      if (parentNode!.left === currNode) {
+        parentNode!.left = successor;
+      } else {
+        parentNode!.right = successor;
+      }
+    }
+    return this;
   }
 }
 
@@ -141,10 +170,11 @@ tree.insert(4);
 tree.insert(6);
 tree.insert(20);
 tree.insert(170);
+tree.insert(150);
+tree.insert(180);
 tree.insert(15);
 tree.insert(1);
-tree.delete(1);
-tree.delete(4);
+tree.delete(9);
 console.log(chalk.red("Lookup 1", JSON.stringify(tree.lookup(1))), "\n\n");
 
 if (tree.root) console.log(chalk.green(JSON.stringify(traverse(tree.root))));
@@ -155,13 +185,19 @@ if (tree.root) console.log(chalk.green(JSON.stringify(traverse(tree.root))));
       4       20
     /  \     /  \
    1    6   15   170
-   
-   /// RESULT ///
-{
+                 /  \
+              150   180
+*/
+
+export const beforeDeleting20 = {
   value: 9,
   right: {
     value: 20,
-    right: { value: 170, right: null, left: null },
+    right: {
+      value: 170,
+      right: { value: 180, right: null, left: null },
+      left: { value: 150, right: null, left: null },
+    },
     left: { value: 15, right: null, left: null },
   },
   left: {
@@ -170,4 +206,21 @@ if (tree.root) console.log(chalk.green(JSON.stringify(traverse(tree.root))));
     left: { value: 1, right: null, left: null },
   },
 };
-*/
+
+export const afterDeleting20 = {
+  value: 9,
+  right: {
+    value: 150,
+    right: {
+      value: 170,
+      right: { value: 180, right: null, left: null },
+      left: null,
+    },
+    left: { value: 15, right: null, left: null },
+  },
+  left: {
+    value: 4,
+    right: { value: 6, right: null, left: null },
+    left: { value: 1, right: null, left: null },
+  },
+};
