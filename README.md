@@ -376,7 +376,7 @@ The insertion goes from left to right. It balances and keeps always the value re
 
 <p style="font-size: 0.6rem; font-weight: bold;">* It has no relation with the memory Heap of the Javascript runtime Engine</p>
 
-<u><a>Trie:</a></u> is a specialized tree structure used primarily for storing strings or sequences. It consists of nodes that represent common prefixes of strings. The root node is typically empty.
+<u><a href="#">Trie:</a></u> is a specialized tree structure used primarily for storing strings or sequences. It consists of nodes that represent common prefixes of strings. The root node is typically empty.
 
 **Good For:** Tries are particularly useful for autocomplete features, spell checking, and implementing dictionaries where prefix matching is required.
 
