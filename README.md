@@ -327,6 +327,12 @@ The binary search Tree has some rules:
 
 <u>Full Binary Tree:</u> All its nodes have either 0 or 2 children (Never 1)
 
+<u>There are also other kind of Binary Search Trees:</u>
+
+<a href="https://www.cs.usfca.edu/~galles/visualization/AVLtree.html">AVL Tree:</a> Self-balancing binary search tree (BST). It maintains a balance factor for each node, which is the difference between the heights of the left and right subtrees. This balance factor must be -1, 0, or +1 for the tree to remain balanced
+
+<a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">Red Black Tree:</a> Self-balancing binary search tree (BST). Each node in a Red-Black Tree has an additional attribute: a color, which can be either red or black.
+
 **Components**
 
 - Root: Topmost Node. It serves as the starting point.
@@ -340,4 +346,42 @@ The binary search Tree has some rules:
 
 **Performance:**
 
+If balanced:
+
 - Search => O(log n)
+- Insert => O(log n)
+- Delete => O(log n)
+
+If Unbalanced:
+
+- Search => O(n)
+- Insert => O(n)
+- Delete => O(n)
+
+**Other kind of Trees**
+
+<u><a href="https://visualgo.net/en/heap?slide=1">Binary Heap:</a></u> The parent Nodes are ALWAYS bigger / smaller than any of its children
+
+The insertion goes from left to right. It balances and keeps always the value relations. It can be implemented with arrays because it always keeps the order of insertions.
+
+**Good for:** Doing comparative Operations. Priority queues (The order is based in priority instead of order of insertion). Flexible Size.
+
+**Not good for:** Slow Lookup.
+
+**Performance:**
+
+- Lookup => O(n) because it is less ordered als BST.
+- Insert => O(log n)
+- Delete => O(log n)
+
+<p style="font-size: 0.6rem; font-weight: bold;">* It has no relation with the memory Heap of the Javascript runtime Engine</p>
+
+<u><a>Trie:</a></u> is a specialized tree structure used primarily for storing strings or sequences. It consists of nodes that represent common prefixes of strings. The root node is typically empty.
+
+**Good For:** Tries are particularly useful for autocomplete features, spell checking, and implementing dictionaries where prefix matching is required.
+
+**Performance:**
+
+- Lookup => O(m) where m is the length of the string being searched
+- Insert => O(m)
+- Delete => O(m)
