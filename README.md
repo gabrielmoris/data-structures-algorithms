@@ -385,3 +385,35 @@ The insertion goes from left to right. It balances and keeps always the value re
 - Lookup => O(m) where m is the length of the string being searched
 - Insert => O(m)
 - Delete => O(m)
+
+## Graphs
+
+[Graph Implementation](TS/DataStructures/graph.ts)
+[Graph Example](https://visualgo.net/en/graphds?slide=1)
+
+A graph is a set of vertices (nodes) connected by edges. It's a versatile data structure that can represent various relationships. Trees and linked lists are special types of graphs.
+
+**Types of Graphs:**
+
+<u>Directed Graphs:</u> Edges have a specific direction.
+<u>Undirected Graphs:</u> Edges have no direction.
+
+<u>Weighted Graphs:</u> Edges carry additional information (weights).
+<u>Unweighted Graphs:</u> Edges don't have associated weights.
+
+<u>Cyclic Graphs:</u> Contain at least one cycle.
+<u>Acyclic Graphs:</u> Have no cycles.
+
+**There are several ways to repsresent Graphs**
+
+```
+   2-----0
+  / \
+ 1---3
+```
+
+<u>Edge List</u> `const graph =[[0,2],[2,3],[2,1],[1,3]]` An array of arrays representing all connections.
+
+<u>Adjacent List</u> `const graph =[[2],[2,3],[0,1,3],[1,2]]` An array of arrays where the index represents the vertex and the inner array contains its adjacent vertices.
+
+<u>Adjacent Matrix</u> `const graph =[[0,0,1,0],[0,0,1,1],[1,1,0,1],[0,1,1,0]]` A 2D array where rows and columns represent vertices, and values indicate connections (0 for no edge, 1 for an edge).
