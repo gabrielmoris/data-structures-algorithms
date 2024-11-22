@@ -417,3 +417,26 @@ A graph is a set of vertices (nodes) connected by edges. It's a versatile data s
 <u>Adjacent List</u> `const graph =[[2],[2,3],[0,1,3],[1,2]]` An array of arrays where the index represents the vertex and the inner array contains its adjacent vertices.
 
 <u>Adjacent Matrix</u> `const graph =[[0,0,1,0],[0,0,1,1],[1,1,0,1],[0,1,1,0]]` A 2D array where rows and columns represent vertices, and values indicate connections (0 for no edge, 1 for an edge).
+
+**Good For:** Relationships
+
+**Not Good For:** Hard to scale
+
+# Algorithms
+
+Steps in a process to perform a desired Action.
+
+## Recursion (Not an Algorithm)
+
+[Examples of Recursion](TS//Algorithms/recursion.ts)
+
+It is not technically an Algorithm, but It is a very common topic. It is a function that calls itself.
+
+```typescript
+let tount = 0;
+function recursive() {
+  count++;
+  if (count > 10) return "Done"; // You need to tell the FN when to stop to avoid Stack Overflow.
+  return recursive(); // You need to return the callback function to pop up the returned value of the end
+}
+```

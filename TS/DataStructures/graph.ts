@@ -1,3 +1,5 @@
+import chalk from "chalk";
+
 class Graph<T> {
   length: number;
   adjacentList: Map<T, Set<T>>; // {key as string: value as array of T}
@@ -46,6 +48,7 @@ class Graph<T> {
   }
 
   removeEdge(node1: T, node2: T): this | null {
+    debugger;
     const connections1 = this.adjacentList.get(node1);
     const connections2 = this.adjacentList.get(node2);
 
@@ -60,7 +63,7 @@ class Graph<T> {
 
   showConnections(): void {
     for (let [node, connections] of this.adjacentList) {
-      console.log(`${String(node)} --> ${[...connections].join(" ")}`);
+      console.log(`${chalk.red(String(node))} ${chalk.green("-->")} ${chalk.yellow([...connections].join(" "))}`);
     }
   }
 }
