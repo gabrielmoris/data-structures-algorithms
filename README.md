@@ -428,15 +428,46 @@ Steps in a process to perform a desired Action.
 
 ## Recursion (Not an Algorithm)
 
-[Examples of Recursion](TS//Algorithms/recursion.ts)
+[Examples of Recursion](TS/Algorithms/recursion.ts)
 
-It is not technically an Algorithm, but It is a very common topic. It is a function that calls itself.
+Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. While it is not technically an algorithm, it is a fundamental concept in computer science and is widely used in various algorithms.
+
+### How Recursion Works
+
+In a recursive function, there are generally two key components:
+
+1. **Base Case**: This is the condition under which the function will stop calling itself. It prevents infinite recursion and potential stack overflow errors.
+2. **Recursive Case**: This is where the function calls itself with modified arguments, moving towards the base case.
+
+### Example
 
 ```typescript
-let tount = 0;
+let count = 0;
 function recursive() {
   count++;
-  if (count > 10) return "Done"; // You need to tell the FN when to stop to avoid Stack Overflow.
-  return recursive(); // You need to return the callback function to pop up the returned value of the end
+  if (count > 10) return "Done"; // Base case: stops recursion
+  return recursive(); // Recursive case: calls itself
 }
 ```
+
+**Good For:** Keeps the code DRY and more readable
+
+**Not Good For:** Can have a very strong memory footprint
+
+Recursion is often used in Depth-First Search and Breadth-First Search. So we can use it every time we use a Tree oconvert sth into a Tree.
+
+## Sorting
+
+[Examples of Sorting](https://www.toptal.com/developers/sorting-algorithms)
+
+Sorting algorithms are essential for organizing data in a specific order, which can significantly enhance the efficiency of data processing and retrieval. This section provides an overview of various sorting algorithms, their characteristics, and their performance under different conditions.
+
+### Bubble Sort
+
+[Implementation of Sorting](TS/Algorithms/bubble-sort.ts)
+
+A simple comparison-based algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It Iterates over pairs of elements comparing them and sorting them repeating from begginning to the end until all them are sorted.
+
+**Time Complexity:** O(n²)
+
+**Best Use Case:** Small datasets or nearly sorted data.

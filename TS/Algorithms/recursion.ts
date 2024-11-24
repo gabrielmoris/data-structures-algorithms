@@ -42,3 +42,15 @@ const fibonacciIter = (n: number): number => {
 };
 
 console.log(chalk.blue(fibonacciIter(7)));
+
+// Reverse a string using recursion
+
+function reverseString(str: string): string {
+  if (str === "") {
+    return "";
+  }
+
+  return reverseString(str.substring(1)) + str.charAt(0);
+}
+
+console.log(chalk.green(reverseString("reverse")));
