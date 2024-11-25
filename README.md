@@ -464,10 +464,37 @@ Sorting algorithms are essential for organizing data in a specific order, which 
 
 ### Bubble Sort
 
-[Implementation of Sorting](TS/Algorithms/bubble-sort.ts)
+[Implementation of Bubble Sort](TS/Algorithms/bubble-sort.ts)
 
 A simple comparison-based algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It Iterates over pairs of elements comparing them and sorting them repeating from begginning to the end until all them are sorted.
+
+**How it Works:**
+
+- Start at the beginning of the list.
+- Compare the first two adjacent elements.
+- If the first element is greater than the second, swap them.
+- Move to the next pair of adjacent elements and repeat step 3.
+- Continue this process for each pair of adjacent elements until you reach the end of the list.
+- At this point, the largest element will have "bubbled up" to its correct position at the end of the list.
+- Repeat steps 1-6 for the remaining unsorted portion of the list until no swaps are needed, indicating that the list is sorted.
 
 **Time Complexity:** O(n²)
 
 **Best Use Case:** Small datasets or nearly sorted data.
+
+### Selection Sort
+
+[Implementation of Selection Sort](TS/Algorithms/selection-sort.ts)
+
+Selection Sort is a simple, comparison-based sorting algorithm that divides the input list into two parts: a sorted and an unsorted region. It repeatedly selects the smallest (or largest, depending on sorting order) element from the unsorted region and moves it to the end of the sorted region. The process continues until no elements remain in the unsorted region.
+
+**How it Works:**
+
+- Start with an empty sorted region and the entire list as the unsorted region.
+- Find the minimum (or maximum) element in the unsorted region.
+- Swap it with the first unsorted element, effectively growing the sorted region by one.
+- Repeat steps 2-3 until the entire list is sorted.
+
+**Time Complexity:** O(n²)
+
+**Best Use Case:** Particularly effective for small datasets or when memory write operations are costly, as it makes at most n swaps.
