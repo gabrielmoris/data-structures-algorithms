@@ -501,6 +501,8 @@ Selection Sort is a simple, comparison-based sorting algorithm that divides the 
 
 ### Insertion Sort
 
+Insertion Sort is a simple sorting algorithm that builds the final sorted array one element at a time. It is efficient for small data sets and is often used as part of more complex sorting algorithms.
+
 [Implementation of Insertion Sort](TS/Algorithms/insertion-sort.ts)
 
 **How it Works:**
@@ -513,3 +515,18 @@ Selection Sort is a simple, comparison-based sorting algorithm that divides the 
 **Time Complexity:** O(n) in the best case.
 
 **Best Use Case:** When the list is almost sorted, being O(n) in his best case.
+
+### Merge Sort
+
+[Implementation of Merge Sort](TS/Algorithms/merge-sort.ts)
+
+Merge Sort is a divide-and-conquer algorithm that recursively divides the input array into smaller subarrays, sorts them, and then merges these sorted subarrays to produce a final sorted array.
+
+**How it Works:**
+
+- Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
+- Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
+
+**Time Complexity:** O(n log n) in all cases (best, average, and worst).
+
+**Best Use Case:** Merge Sort is efficient for sorting large datasets and is particularly useful when stable sorting is required. It's also well-suited for external sorting, where data doesn't fit into memory.

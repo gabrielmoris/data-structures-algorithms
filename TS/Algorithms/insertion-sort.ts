@@ -1,5 +1,4 @@
-// const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
-const numbers = [1, 3, 4, 2];
+const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function insertionSort(array: number[]): void {
   for (let i = 1; i < array.length; i++) {
