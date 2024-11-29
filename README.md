@@ -498,3 +498,18 @@ Selection Sort is a simple, comparison-based sorting algorithm that divides the 
 **Time Complexity:** O(n²)
 
 **Best Use Case:** Particularly effective for small datasets or when memory write operations are costly, as it makes at most n swaps.
+
+### Insertion Sort
+
+[Implementation of Insertion Sort](TS/Algorithms/insertion-sort.ts)
+
+**How it Works:**
+
+- Starts looking at the first item.
+- It goes to the second item and if it is smaller, it switches them.
+- It goes to the 3rd and checks in which place belongs in relation to the first 2, placing it there.
+- Goes to the forth item and does the same, inserting it in the place between the already sorted part.
+
+**Time Complexity:** O(n) in the best case.
+
+**Best Use Case:** When the list is almost sorted, being O(n) in his best case.
