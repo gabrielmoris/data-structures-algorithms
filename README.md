@@ -530,3 +530,26 @@ Merge Sort is a divide-and-conquer algorithm that recursively divides the input 
 **Time Complexity:** O(n log n) in all cases (best, average, and worst).
 
 **Best Use Case:** Merge Sort is efficient for sorting large datasets and is particularly useful when stable sorting is required. It's also well-suited for external sorting, where data doesn't fit into memory.
+
+### Quick Sort
+
+[Implementation of Quick Sort](TS/Algorithms/quick-sort.ts)
+
+It is a Divide & Conquer algorithm that chooses a pivot number to sort using it as a reference.
+
+**How it Works:**
+
+- It selects a pivot element from the array (often the last or a random element).
+- It partitions the array around the pivot, moving smaller elements to the left and larger elements to the right.
+- After partitioning, the pivot is in its final sorted position.
+- The algorithm then recursively applies the same steps to the sub-arrays on the left and right of the pivot.
+- This process continues until the entire array is sorted.
+
+**Time Complexity:** O(n log n), but in its worst case can be O(n^2) (When pivot is smallest or bigggest item in the array)
+
+**Best Use Case:**
+
+- Large datasets: It performs well on average for large arrays.
+- In-place sorting: It requires only a small auxiliary stack.
+- Systems where caching is important: It has good locality of reference.
+- When average-case performance is more important than worst-case guarantees.
