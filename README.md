@@ -462,6 +462,14 @@ Recursion is often used in Depth-First Search and Breadth-First Search. So we ca
 
 Sorting algorithms are essential for organizing data in a specific order, which can significantly enhance the efficiency of data processing and retrieval. This section provides an overview of various sorting algorithms, their characteristics, and their performance under different conditions.
 
+**When to use which algorithm?**
+
+- <u>Merge Sort:</u> Diide and conquer, eficient. More memory exxpensive.
+- <u>Quick Sort:</u> The average case and memory efficience is Better than Merge sort, but the worst case can be very unefficient.
+- <u>Insertion Sort:</u> When we have few Items or Items are almost sorted
+- <u>Bubble Sort:</u> Educational purpose, but not eficient.
+- <u>Selection Sort:</u>Educational purpose, but not eficient.
+
 ### Bubble Sort
 
 [Implementation of Bubble Sort](TS/Algorithms/bubble-sort.ts)
