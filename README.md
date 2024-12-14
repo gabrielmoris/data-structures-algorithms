@@ -477,6 +477,14 @@ Recursion is often used in Depth-First Search and Breadth-First Search. So we ca
 
 Sorting algorithms are essential for organizing data in a specific order, which can significantly enhance the efficiency of data processing and retrieval. This section provides an overview of various sorting algorithms, their characteristics, and their performance under different conditions.
 
+**When to use which algorithm?**
+
+- <u>Merge Sort:</u> Diide and conquer, eficient. More memory exxpensive.
+- <u>Quick Sort:</u> The average case and memory efficience is Better than Merge sort, but the worst case can be very unefficient.
+- <u>Insertion Sort:</u> When we have few Items or Items are almost sorted
+- <u>Bubble Sort:</u> Educational purpose, but not eficient.
+- <u>Selection Sort:</u>Educational purpose, but not eficient.
+
 ### Bubble Sort
 
 [Implementation of Bubble Sort](TS/Algorithms/bubble-sort.ts)
@@ -513,3 +521,58 @@ Selection Sort is a simple, comparison-based sorting algorithm that divides the 
 **Time Complexity:** O(n²)
 
 **Best Use Case:** Particularly effective for small datasets or when memory write operations are costly, as it makes at most n swaps.
+
+### Insertion Sort
+
+Insertion Sort is a simple sorting algorithm that builds the final sorted array one element at a time. It is efficient for small data sets and is often used as part of more complex sorting algorithms.
+
+[Implementation of Insertion Sort](TS/Algorithms/insertion-sort.ts)
+
+**How it Works:**
+
+- Starts looking at the first item.
+- It goes to the second item and if it is smaller, it switches them.
+- It goes to the 3rd and checks in which place belongs in relation to the first 2, placing it there.
+- Goes to the forth item and does the same, inserting it in the place between the already sorted part.
+
+**Time Complexity:** O(n) in the best case.
+
+**Best Use Case:** When the list is almost sorted, being O(n) in his best case.
+
+### Merge Sort
+
+[Implementation of Merge Sort](TS/Algorithms/merge-sort.ts)
+
+Merge Sort is a divide-and-conquer algorithm that recursively divides the input array into smaller subarrays, sorts them, and then merges these sorted subarrays to produce a final sorted array.
+
+**How it Works:**
+
+- Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
+- Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
+
+**Time Complexity:** O(n log n) in all cases (best, average, and worst).
+
+**Best Use Case:** Merge Sort is efficient for sorting large datasets and is particularly useful when stable sorting is required. It's also well-suited for external sorting, where data doesn't fit into memory.
+
+### Quick Sort
+
+[Implementation of Quick Sort](TS/Algorithms/quick-sort.ts)
+
+It is a Divide & Conquer algorithm that chooses a pivot number to sort using it as a reference.
+
+**How it Works:**
+
+- It selects a pivot element from the array (often the last or a random element).
+- It partitions the array around the pivot, moving smaller elements to the left and larger elements to the right.
+- After partitioning, the pivot is in its final sorted position.
+- The algorithm then recursively applies the same steps to the sub-arrays on the left and right of the pivot.
+- This process continues until the entire array is sorted.
+
+**Time Complexity:** O(n log n), but in its worst case can be O(n^2) (When pivot is smallest or bigggest item in the array)
+
+**Best Use Case:**
+
+- Large datasets: It performs well on average for large arrays.
+- In-place sorting: It requires only a small auxiliary stack.
+- Systems where caching is important: It has good locality of reference.
+- When average-case performance is more important than worst-case guarantees.
