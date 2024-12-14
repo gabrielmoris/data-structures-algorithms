@@ -55,6 +55,21 @@ function createArray(input) {
 }
 ```
 
+## **Cyclomatic complexity**
+
+Is a software metric used to measure the complexity of a program's control flow.
+It quantifies the number of independent paths through 1 the source code.
+A higher complexity number indicates a more complex program, which can be harder to understand, test, and maintain
+
+#### How to Measure Cyclomatic Complexity
+
+1. **Control Flow Graph**
+2. **Calculate Cyclomatic Complexity:**
+   1. Edges and Nodes:
+      Complexity = E - N + 2 (E is the number of edges in the graph,N is the number of nodes in the graph.)
+   2. Decision Points:
+      Count the number of decision points (e.g., if, while, for) in the code.
+
 ## **Good Code**
 
 ["Premature optimization can be the root of all evil"](https://stackify.com/premature-optimization-evil/)
